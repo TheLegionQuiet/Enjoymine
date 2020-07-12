@@ -1,0 +1,14 @@
+main: ru.enjoymine.CivCraft.Main
+name: CivCraft
+version: 1.0
+commands:
+  c:
+    aliases: [civ, civilization]
+  yes:
+    aliases: [aye, yeah, accept]
+  no:
+    aliases: [not, reject, deny]
+
+permissions:
+  civcraft.admin:
+    description: "all plugin permissions"
