@@ -1,15 +1,16 @@
 package ru.enjoymine.CivCraft;
 
+import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import ru.enjoymine.CivCraft.commands.CommandManager;
+import ru.enjoymine.CivCraft.commands.t.TownCommandManager;
+import ru.enjoymine.CivCraft.commands.civ.CivCommandManager;
 import ru.enjoymine.CivCraft.db.MySql;
-import ru.enjoymine.CivCraft.db.MySqlConfig;
 
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
-    private static volatile Main instance;
+    private static Main instance;
     private final Logger logger;
 
     public Main() {
@@ -17,14 +18,14 @@ public class Main extends JavaPlugin {
         logger = Bukkit.getLogger();
     }
 
-    public static synchronized Main getInstance() {
+    public static Main getInstance() {
         return instance;
     }
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("§eCivCraft plugin is enabling...");
-
+        Bukkit.getConsoleSender().sendMessage("§eCivCraft plugin enabled.");
+        init();
     }
 
     @Override
@@ -37,8 +38,19 @@ public class Main extends JavaPlugin {
         logger.info("CivCraft plugin loaded.");
     }
 
-    static {
+    private void init() {
         MySql.init();
-        MySqlConfig.init();
+        TownCommandManager.init();
+        CivCommandManager.init();
+    }
+
+    public static WorldEditPlugin getWorldEdit() {
+        if(Bukkit.getPluginManager().getPlugin("WorldEdit") instanceof  WorldEditPlugin)
+            return (WorldEditPlugin) Bukkit.getPluginManager().getPlugin("WorldEdit");
+        return null;
+    }
+
+    static {
+
     }
 }

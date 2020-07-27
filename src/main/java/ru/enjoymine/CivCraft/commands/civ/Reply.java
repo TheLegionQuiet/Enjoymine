@@ -1,4 +1,4 @@
-package ru.enjoymine.CivCraft.commands;
+package ru.enjoymine.CivCraft.commands.civ;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,7 +16,6 @@ public enum Reply implements CommandExecutor {
                 break;
             case "NO":
 
-                break;
         }
         return true;
     }

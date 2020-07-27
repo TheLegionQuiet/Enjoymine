@@ -3,9 +3,8 @@ package ru.enjoymine.CivCraft.commands.civ;
 import org.bukkit.entity.Player;
 import ru.enjoymine.CivCraft.commands.SubCommand;
 
-public class Info extends SubCommand {
-
-    protected Info(String name) {
+public class Research extends SubCommand {
+    protected Research(String name) {
         super(name);
     }
 
@@ -13,5 +12,4 @@ public class Info extends SubCommand {
     public void onCommand(String[] strings, Player p) {
 
     }
-
 }

@@ -9,7 +9,7 @@ public class MySqlConfig {
     private static YamlConfiguration MySqlConfig;
 
     public static void init() {
-        File file = new File(Main.getInstance().getDataFolder() + File.pathSeparator + "MySql");
+        File file = new File(Main.getInstance().getDataFolder(), "MySql");
         MySqlConfig = YamlConfiguration.loadConfiguration(file);
     }
 }

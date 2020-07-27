@@ -4,11 +4,18 @@ version: 1.0
 commands:
   c:
     aliases: [civ, civilization]
-  yes:
-    aliases: [aye, yeah, accept]
-  no:
-    aliases: [not, reject, deny]
+  accept:
+    aliases: [y, aye, yeah]
+  deny:
+    aliases: [n, not, reject]
+  t:
+    aliases: [town]
+
+depend:
+  - WorldEdit
 
 permissions:
-  civcraft.admin:
+  cc.admin:
     description: "all plugin permissions"
+  c.builder:
+    description: "builder permissions"
